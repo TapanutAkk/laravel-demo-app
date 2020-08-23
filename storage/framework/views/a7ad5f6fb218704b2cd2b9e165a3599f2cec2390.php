@@ -9,12 +9,14 @@
     <div id="wrapper">
         <div id="page" class="container">
             <ul class="style1">
-                <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__empty_1 = true; $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                     <li class="first">
                         <h3><a href="<?php echo e($article->path()); ?>"><?php echo e($article->title); ?></a></h3>
                         <p><?php echo e($article->excerpt); ?></p>
                     </li>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                    <p>No relevant articles yet.</p>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
