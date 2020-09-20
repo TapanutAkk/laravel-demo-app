@@ -67,7 +67,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div class="field">
-                        <label class="label" for="body">Body</label>
+                        <label class="label" for="body">body</label>
                         <div class="control">
                             <textarea class="textarea <?php $__errorArgs = ['body'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -83,6 +83,27 @@ if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
                                 <p class="help is-danger"><?php echo e($errors->first('body')); ?></p>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for="tags">Tags</label>
+                        <div class="control select is-multiple">
+                            <select name="tags[]" multiple>
+                                <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($tag->id); ?>"><?php echo e($tag->name); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </select>
+                            <?php $__errorArgs = ['tags'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <p class="help is-danger"><?php echo e($message); ?></p>
                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
