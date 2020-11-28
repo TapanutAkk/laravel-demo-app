@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Laravel',
+    'name' => 'freshproject',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost',
@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:vJcpAiaSqB52MZEeF+ELVF4e356Z891u2FxpsrokUg8=',
+    'key' => 'base64:6krT74/HKcpenKQYNTXTtbsfCDcOCxkVN3fvUT5Q178=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -216,7 +216,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'laravel_cache',
+    'prefix' => 'freshproject_cache',
   ),
   'cors' => 
   array (
@@ -262,7 +262,7 @@
       array (
         'driver' => 'mysql',
         'url' => NULL,
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'test',
         'username' => 'root',
@@ -282,7 +282,7 @@
       array (
         'driver' => 'pgsql',
         'url' => NULL,
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'test',
         'username' => 'root',
@@ -297,7 +297,7 @@
       array (
         'driver' => 'sqlsrv',
         'url' => NULL,
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'test',
         'username' => 'root',
@@ -314,7 +314,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'laravel_database_',
+        'prefix' => 'freshproject_database_',
       ),
       'default' => 
       array (
@@ -460,7 +460,7 @@
   ),
   'mail' => 
   array (
-    'default' => 'smtp',
+    'default' => 'log',
     'mailers' => 
     array (
       'smtp' => 
@@ -502,8 +502,8 @@
     ),
     'from' => 
     array (
-      'address' => NULL,
-      'name' => 'Laravel',
+      'address' => 'test@test.com',
+      'name' => 'freshproject',
     ),
     'markdown' => 
     array (
@@ -598,7 +598,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'laravel_session',
+    'cookie' => 'freshproject_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
